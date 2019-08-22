@@ -65,6 +65,7 @@ class Student extends Person {
   }
   //Why does this also log the index?
   listSubjects() {
+    console.log(this.favSubjects);
     this.favSubjects.forEach(console.log);
   }
   PRAssignment(subject) {
@@ -89,7 +90,35 @@ const student2 = new Student("Karen", 55, "Everywhere", "HR", "WEB23", [
 //Student Test Cases
 // console.log(student1);
 // console.log(student2);
-
+//Why does this also log the index?
 student2.listSubjects();
 // student1.PRAssignment("Functional Veganism Programming");
 // student1.sprintChallenge("Oreo Clicker App");
+
+class TeamLead extends Instructor {
+  constructor(
+    name,
+    age,
+    location,
+    speciality,
+    favLanguage,
+    catchPhrase,
+    gradClassName,
+    favInstructor
+  ) {
+    super(name, age, location, speciality, favLanguage, catchPhrase);
+    this.gradClassName = gradClassName;
+    this.favInstructor = favInstructor;
+  }
+  stand(channel) {
+    //rewrote this phrase to sensible english
+    console.log(
+      `${this.name} announces to ${channel}, @channel it's standup times`
+    );
+  }
+  debugsCode(student) {
+    console.log(`${this.name} debugs ${student.name}'s code on `);
+  }
+}
+
+const tl1 = new TeamLead("Sean", 30);
