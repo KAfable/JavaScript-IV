@@ -117,8 +117,20 @@ class TeamLead extends Instructor {
     );
   }
   debugsCode(student, subject) {
-    console.log(`${this.name} debugs ${student.name}'s code on ${subject}`);
+    console.log(`${this.name} debugs ${student.name}'s code on ${subject}.`);
   }
 }
 
-const tl1 = new TeamLead("Sean", 30);
+const tl1 = new TeamLead(
+  "Sean",
+  30,
+  "Lambda",
+  "React",
+  "Rust",
+  "Got'em coach!",
+  "CS1",
+  "Elon Musk"
+);
+
+console.log(tl1);
+tl1.debugsCode(student2, "classes");
