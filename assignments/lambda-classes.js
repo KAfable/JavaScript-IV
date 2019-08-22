@@ -14,10 +14,10 @@ class Person {
 //Class Person Test
 const testPerson1 = new Person("Fred", 28, "Bedrock");
 const testPerson2 = new Person("Betty", 25, "Miami");
-console.log(testPerson1);
-console.log(testPerson2);
-testPerson1.speak();
-testPerson2.speak();
+// console.log(testPerson1);
+// console.log(testPerson2);
+// testPerson1.speak();
+// testPerson2.speak();
 
 class Instructor extends Person {
   constructor(name, age, location, speciality, favLanguage, catchPhrase) {
@@ -51,10 +51,10 @@ const brit = new Instructor(
   "Please share your screen during breakouts, its mandatory."
 );
 //Instructor test cases
-console.log(fred);
-console.log(brit);
-fred.demo("how to party like a rock star");
-brit.demo("the horrors of pre-flexbox internet");
+// console.log(fred);
+// console.log(brit);
+// fred.demo("how to party like a rock star");
+// brit.demo("the horrors of pre-flexbox internet");
 
 class Student extends Person {
   constructor(name, age, location, bg, cohort, fav) {
@@ -63,6 +63,7 @@ class Student extends Person {
     this.className = cohort;
     this.favSubjects = fav;
   }
+  //Why does this also log the index?
   listSubjects() {
     this.favSubjects.forEach(console.log);
   }
@@ -86,8 +87,9 @@ const student2 = new Student("Karen", 55, "Everywhere", "HR", "WEB23", [
 ]);
 
 //Student Test Cases
-console.log(student1);
-console.log(student2);
+// console.log(student1);
+// console.log(student2);
+
 student2.listSubjects();
-student1.PRAssignment("Functional Veganism Programming");
-student1.sprintChallenge("Oreo Clicker App");
+// student1.PRAssignment("Functional Veganism Programming");
+// student1.sprintChallenge("Oreo Clicker App");
