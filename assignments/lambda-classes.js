@@ -116,8 +116,8 @@ class TeamLead extends Instructor {
       `${this.name} announces to ${channel}, @channel it's standup times`
     );
   }
-  debugsCode(student) {
-    console.log(`${this.name} debugs ${student.name}'s code on `);
+  debugsCode(student, subject) {
+    console.log(`${this.name} debugs ${student.name}'s code on ${subject}`);
   }
 }
 
