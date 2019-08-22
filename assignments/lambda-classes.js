@@ -55,3 +55,39 @@ console.log(fred);
 console.log(brit);
 fred.demo("how to party like a rock star");
 brit.demo("the horrors of pre-flexbox internet");
+
+class Student extends Person {
+  constructor(name, age, location, bg, cohort, fav) {
+    super(name, age, location);
+    this.previousBackground = bg;
+    this.className = cohort;
+    this.favSubjects = fav;
+  }
+  listSubjects() {
+    this.favSubjects.forEach(console.log);
+  }
+  PRAssignment(subject) {
+    console.log(`${this.name} has submitted a PR for ${subject}.`);
+  }
+  sprintChallenge(subject) {
+    console.log(`${this.name} has begun a sprint challenge for ${subject}.`);
+  }
+}
+
+const student1 = new Student("Kevin", 28, "Boston", "Analyst", "WEB23", [
+  "cooking",
+  "re-factoring",
+  "Discord"
+]);
+const student2 = new Student("Karen", 55, "Everywhere", "HR", "WEB23", [
+  "karen",
+  "nagging",
+  "speaking to managers"
+]);
+
+//Student Test Cases
+console.log(student1);
+console.log(student2);
+student2.listSubjects();
+student1.PRAssignment("Functional Veganism Programming");
+student1.sprintChallenge("Oreo Clicker App");
