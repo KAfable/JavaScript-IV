@@ -21,30 +21,57 @@
 // console.log(computer);
 // computer.speak();
 
-class CharacterObject {
+class Character {
   constructor(attrs) {
-    (this.name = attrs.name),
-      (this.location = attrs.location),
-      (this.phrase = attrs.phrase);
+    this.name = attrs.name;
+    this.location = attrs.location;
+    this.phrase = attrs.phrase;
   }
   place() {
     return `${this.name} is from ${this.location}.`;
   }
 }
 
-let leela = new CharacterObject({
-  name: "Leela",
+const bender = new Character({
+  name: "Bender",
   location: "Earth",
-  phrase: "You're an idiot."
+  phrase: "Kiss my shiny metal ass"
 });
 
-console.log(leela.place());
+class Human extends Character {
+  constructor(humanAttrs) {
+    super(humanAttrs);
+    this.lastName = humanAttrs.lastName;
+  }
+  speak() {
+    return `My name is ${this.name} ${this.lastName} and ${this.phrase}.`;
+  }
+}
+
+const philip = new Human({
+  name: "Philip",
+  location: "Earth",
+  phrase: "Shut up and take my money!",
+  lastName: "Fry"
+});
+
+console.log(bender.place());
+console.log(philip.place());
+console.log(philip.speak());
+
+// let leela = new CharacterObject({
+//   name: "Leela",
+//   location: "Earth",
+//   phrase: "You're an idiot."
+// });
+
+// console.log(leela.place());
 
 // class CharacterObject {
 //   constructor(attrs) {
-//     this.name = name;
-//     this.location = location;
-//     this.phrase = phrase;
+//     this.name = attrs.name;
+//     this.location = attrs.location;
+//     this.phrase = attrs.phrase;
 //   }
 //   work() {
 //     console.log(`${this.name} works at Planet Express`);
@@ -56,3 +83,18 @@ console.log(leela.place());
 //   location = 'USA',
 //   phrase = "You're an idiot"
 // })
+
+// //vs
+
+// class CharacterObject {
+//   constructor(name, location, phrase) {
+//     this.name = name;
+//     this.location = location;
+//     this.phrase = phrase;
+//   }
+//   work() {
+//     console.log(`${this.name} works at Planet Express`);
+//   }
+// }
+
+// const leila = new CharacterObject('Leila', 'Earth', "You're an idiot.")
