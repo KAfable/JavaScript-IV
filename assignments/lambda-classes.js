@@ -29,8 +29,8 @@ class Instructor extends Person {
   demo(subject) {
     console.log(`Today we are learning about ${subject}.`);
   }
-  grade(student, subject) {
-    console.log(`${student.name} receives a perfect score on ${subject}.`);
+  grade(student) {
+    student.grade = student.grade + Math.floor(Math.random() * 10);
   }
 }
 
@@ -62,17 +62,34 @@ class Student extends Person {
     this.previousBackground = bg;
     this.className = cohort;
     this.favSubjects = fav;
+    //is this the only option?
+    this.grade = 0;
+    this.alumni = false;
   }
   //Why does this also log the index?
   listSubjects() {
-    console.log(this.favSubjects);
     this.favSubjects.forEach(console.log);
+    for (let x of this.favSubjects) {
+      console.log(x);
+    }
   }
   PRAssignment(subject) {
     console.log(`${this.name} has submitted a PR for ${subject}.`);
   }
   sprintChallenge(subject) {
     console.log(`${this.name} has begun a sprint challenge for ${subject}.`);
+  }
+  graduate() {
+    if (this.grade > 70) {
+      this.alumni = true;
+      console.log(
+        `${this.name} graduates from Lambda School! C's get degrees!`
+      );
+    } else {
+      console.log(
+        `${this.name}'s grade is only ${this.grade}, they can't graduate yet.`
+      );
+    }
   }
 }
 
@@ -90,7 +107,7 @@ const student2 = new Student("Karen", 55, "Everywhere", "HR", "WEB23", [
 //Student Test Cases
 // console.log(student1);
 // console.log(student2);
-//Why does this also log the index?
+// * Why does this also log the index?
 student2.listSubjects();
 // student1.PRAssignment("Functional Veganism Programming");
 // student1.sprintChallenge("Oreo Clicker App");
@@ -132,5 +149,13 @@ const tl1 = new TeamLead(
   "Elon Musk"
 );
 
-console.log(tl1);
-tl1.debugsCode(student2, "classes");
+//console.log(tl1);
+//tl1.debugsCode(student2, "classes");
+
+// Stretch Goals
+// Student["grade"] = 100;
+
+while (!student1.alumni) {
+  tl1.grade(student1);
+  student1.graduate();
+}
