@@ -39,15 +39,15 @@ const fred = new Person({
 
 - Because none of the above code is new, you're about to see your world get much much easier when dealing with Object Creation and Classical Inheritance as it pertains to JavaScript.
 - The Class Keyword makes this SO MUCH EASIER!
-- **Fork** and clone this repository.
-- **Complete** all of the exercises found in the assignment files.
+- ~~**Fork** and clone this repository.~~
+- ~~**Complete** all of the exercises found in the assignment files.~~
 
-## `prototype-refactor` - Take existing code and make it modern.
+## `prototype-refactor` - Take existing code and make it modern
 
-- You're going to work with your prototypes assignment you built out yesterday.
-- `Challenge:` **Convert** all of your constructors into ES6 Classes using the `class` and `extends` keywords. You should be able to run your same logs and they should build out the proper expected behaviors.
+- ~~You're going to work with your prototypes assignment you built out yesterday.~~
+- ~~`Challenge:` **Convert** all of your constructors into ES6 Classes using the `class` and `extends` keywords. You should be able to run your same logs and they should build out the proper expected behaviors.~~
 
-## `lambda-classes` - We need a roster of Lambda School personnel. Build it!
+## `lambda-classes` - We need a roster of Lambda School personnel. Build it
 
 - We have a school to build here! This project will get you used to thinking about classes in JavaScript and building them from a brand new data set.
 - Lambda personnel can be broken down into three different types of `people`.
@@ -67,12 +67,12 @@ const fred = new Instructor({
 });
 ```
 
-#### Person
+### Person
 
-- First we need a Person class. This will be our `base-class`
-- Person receives `name` `age` `location` all as props
-- Person receives `speak` as a method.
-- This method logs out a phrase `Hello my name is Fred, I am from Bedrock` where `name` and `location` are the object's own props
+- ~~First we need a Person class. This will be our `base-class`~~
+- ~~Person receives `name` `age` `location` all as props~~
+- ~~Person receives `speak` as a method.~~
+- ~~This method logs out a phrase `Hello my name is Fred, I am from Bedrock` where `name` and `location` are the object's own props~~
 
 #### Instructor
 
