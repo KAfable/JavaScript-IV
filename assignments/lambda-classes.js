@@ -30,7 +30,11 @@ class Instructor extends Person {
     console.log(`Today we are learning about ${subject}.`);
   }
   grade(student) {
-    student.grade = student.grade + Math.floor(Math.random() * 10);
+    if (student.grade > 30) {
+      student.grade = student.grade + Math.floor(Math.random() * 26) - 10;
+    } else {
+      student.grade = student.grade + Math.floor(Math.random() * 10);
+    }
   }
 }
 
@@ -66,12 +70,18 @@ class Student extends Person {
     this.grade = 0;
     this.alumni = false;
   }
-  //Why does this also log the index?
   listSubjects() {
-    this.favSubjects.forEach(console.log);
-    for (let x of this.favSubjects) {
-      console.log(x);
-    }
+    //forEach
+    //this.favSubjects.forEach(console.log);
+    //this.favSubjects.forEach(ele => console.log(ele));
+    this.favSubjects.forEach(function(ele) {
+      console.log(ele);
+    });
+
+    //for loop
+    // for (let x of this.favSubjects) {
+    //   console.log(x);
+    // }
   }
   PRAssignment(subject) {
     console.log(`${this.name} has submitted a PR for ${subject}.`);
@@ -152,10 +162,8 @@ const tl1 = new TeamLead(
 //console.log(tl1);
 //tl1.debugsCode(student2, "classes");
 
-// Stretch Goals
-// Student["grade"] = 100;
-
-while (!student1.alumni) {
-  tl1.grade(student1);
-  student1.graduate();
-}
+// Stretch Goals\
+// while (!student1.alumni) {
+//   tl1.grade(student1);
+//   student1.graduate();
+// }
